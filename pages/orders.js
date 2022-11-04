@@ -1,10 +1,10 @@
-import Head from "next/head"
-import Image from "next/image"
-import styles from "../styles/Home.module.css"
+import React from "react"
 import Header from "../components/Header"
-import Foods from "../components/Foods"
+import Head from "next/head"
+import styles from "../styles/Home.module.css"
+import YourOrders from "../components/YourOrders"
 
-export default function Home() {
+export default function orders() {
     return (
         <div className={styles.container}>
             <Head>
@@ -13,7 +13,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <Foods />
+            <YourOrders />
         </div>
     )
 }
