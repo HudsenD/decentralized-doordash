@@ -57,32 +57,36 @@ const OrderFoodModal = ({ isVisible, onCancel, onCloseButtonPressed, price, food
     }
 
     return (
-        <Modal
-            isVisible={isVisible}
-            okText="Place Order"
-            onOk={async () =>
-                await orderFood({
-                    onSuccess: handleSuccess,
-                    onError: (error) => console.log(error),
-                })
-            }
-            onCancel={onCancel}
-            onCloseButtonPressed={onCloseButtonPressed}
-            title="Checkout"
-        >
-            <div className="font-bold">Select Driver Tip:</div>
-            <div className="m-6 grid md:grid-cols-4 gap-8" type="radio" name="buttonGroup">
-                <Button text="No Tip" onClick={() => updateOrderTotal("0")} />
-                <Button text="0.002 Eth" onClick={() => updateOrderTotal("0.002")} />
-                <Button text="0.004 Eth" onClick={() => updateOrderTotal("0.004")} />
-                <Button text="0.006 Eth" onClick={() => updateOrderTotal("0.006")} />
-            </div>
+        <div className="w-full">
+            <div className="max-w-[1240px] mx-auto justify-center w-full h-auto">
+                <Modal
+                    isVisible={isVisible}
+                    okText="Place Order"
+                    onOk={async () =>
+                        await orderFood({
+                            onSuccess: handleSuccess,
+                            onError: (error) => console.log(error),
+                        })
+                    }
+                    onCancel={onCancel}
+                    onCloseButtonPressed={onCloseButtonPressed}
+                    title="Checkout"
+                >
+                    <div className="font-bold">Select Driver Tip:</div>
+                    <div className="m-6 grid md:grid-cols-4 gap-8" type="radio" name="buttonGroup">
+                        <Button text="No Tip" onClick={() => updateOrderTotal("0")} />
+                        <Button text="0.002 Eth" onClick={() => updateOrderTotal("0.002")} />
+                        <Button text="0.004 Eth" onClick={() => updateOrderTotal("0.004")} />
+                        <Button text="0.006 Eth" onClick={() => updateOrderTotal("0.006")} />
+                    </div>
 
-            <div>Ordering: 1 x {foodName}</div>
-            <div className="text-2xl">
-                Your Total is: ${price} + Tip of {ethers.utils.formatEther(tipFinal)} ETH
+                    <div>Ordering: 1 x {foodName}</div>
+                    <div className="text-2xl">
+                        Your Total is: ${price} + Tip of {ethers.utils.formatEther(tipFinal)} ETH
+                    </div>
+                </Modal>
             </div>
-        </Modal>
+        </div>
     )
 }
 
