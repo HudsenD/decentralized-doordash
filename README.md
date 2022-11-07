@@ -15,6 +15,11 @@ Future Features I'd like to implement include:
 -   Eth price API that charges correct eth amount equal to usd at the time of ordering
 -   Ability to pay with erc20 stablecoins like USDC
 
+## Backend
+
+Here is the code for the smart contract that connects to this project:
+https://github.com/HudsenD/Trustless-Doordash-Payments
+
 ## Technologies
 
 Project is made with:
