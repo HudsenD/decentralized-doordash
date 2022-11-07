@@ -18,6 +18,7 @@ Future Features I'd like to implement include:
 ## Backend
 
 Here is the code for the smart contract that connects to this project:
+
 https://github.com/HudsenD/Trustless-Doordash-Payments
 
 ## Technologies
